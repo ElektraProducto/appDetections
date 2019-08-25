@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Fritz.configure(this)
+        val filteredObjects = mutableListOf<String>()
+        filteredObjects.add("cell phone")
+        filteredObjects.add("smartphone")
+        filteredObjects.add("laptop")
+        filteredObjects.add("person")
+
 
         val objectPredictor = FritzVisionObjectPredictor.getInstance(this)
         var fritzVisionImage: FritzVisionImage
@@ -53,9 +59,15 @@ class MainActivity : AppCompatActivity() {
             itemMap.clear()
 
             visionObjects.forEach { visionObject ->
-                if (itemMap.containsKey(visionObject.visionLabel.text))
-                    itemMap[visionObject.visionLabel.text] = itemMap[visionObject.visionLabel.text]!! + 1
-                itemMap[visionObject.visionLabel.text] = 1
+                if (filteredObjects.contains(visionObject.visionLabel.text)) {
+                    Log.d("vision", visionObject.visionLabel.text)
+                    Log.d("item", itemMap.keys.toString())
+                    if (itemMap.containsKey(visionObject.visionLabel.text)) {
+                        itemMap[visionObject.visionLabel.text] = itemMap[visionObject.visionLabel.text]!! + 1
+                    } else {
+                        itemMap[visionObject.visionLabel.text] = 1
+                    }
+                }
             }
 
             runOnUiThread {
@@ -70,9 +82,9 @@ class MainActivity : AppCompatActivity() {
                                 isTech = 1
                             }
                             children.forEach {
-                                Log.d("data", it.toString())
+                                //Log.d("data", it.toString())
                                 database.child(it.key.toString()).child("is_tech").setValue(isTech)
-                                Log.d("data", it.child("is_tech").value.toString())
+                                //Log.d("data", it.child("is_tech").value.toString())
                             }
 
                         }
