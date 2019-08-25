@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "105564114148",
+    "firebase_url": "https://elektra-demo-41b78.firebaseio.com",
+    "project_id": "elektra-demo-41b78",
+    "storage_bucket": "elektra-demo-41b78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105564114148:android:5441ee06f49a150e",
+        "android_client_info": {
+          "package_name": "elektra.erik.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105564114148-ong6nasmdc06ud1jo4kndh61m9obpe8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAisBy_9CZWYwU-pDZvk_zsop4CBosfhRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105564114148-ong6nasmdc06ud1jo4kndh61m9obpe8m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "105564114148-4quidivu9lu5h367qaftdgjoia1c6rtf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gshack.mx"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
